@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load thumbnail staticfiles i18n %}
+
+{% block header_includes %}
+    <link rel="stylesheet" href="{% static 'vendor/css/prism.css' %}" />
+{% endblock %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li class=""><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+        <li class=""><a href="{{ lesson.course.category.get_absolute_url }}">{{ lesson.course.category }}</a></li>
+        <li class=""><a href="{{ lesson.course.get_absolute_url }}">{{ lesson.course }}</a></li>
+        <li class=""><a class="active">{{ lesson.name }}</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="index lesson-box">
+        <div class="content">
+            <h2>{{ lesson.name }}</h2>
+            <p>{{ lesson.content|safe }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'vendor/js/prism.js' %}"></script>
+{% endblock %}
+

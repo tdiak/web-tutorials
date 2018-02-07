@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load thumbnail staticfiles i18n %}
+
+{% block content %}
+    <div class="index">
+
+        <h2>{% trans 'Categories of courses' %}</h2>
+        <ul class="row courses">
+            {% for category in categories %}
+                <li class="col-md-3 list-item">
+                    <a href="{{ category.get_absolute_url }}">
+                        <div class="visible-content">
+                            <div class="inner-content">
+                                {% if category.image %}
+                                    <img src="{% thumbnail category.image 300x200 crop %}" alt="{{ category.name }}" />
+                                {% endif %}
+                                <p>{{ category.name }}</p>
+                            </div>
+                        </div>
+                        <div class="hide-item">
+                            <div class="invisible-content">
+                                <div class="inner-content">
+                                    <p>{{ category.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h2>{% trans 'Last lessons' %}</h2>
+        <ul class="row lessons">
+            {% for lesson in lessons %}
+                <li class="col-md-3 list-item">
+                    <a href="{{ lesson.get_absolute_url }}">
+                        <div class="visible-content">
+                            <div class="inner-content">
+                                {% if lesson.course.category.image %}
+                                    <img src="{% thumbnail lesson.course.category.image 300x200 crop %}" alt="{{ lesson.name }}" />
+                                {% else %}
+                                    <img src="{% static 'img/placeholder.jpg' %}" alt="placeholder" />
+                                {% endif %}
+                                <p>{{ lesson.name }}</p>
+                            </div>
+                        </div>
+                        <div class="hide-item">
+                            <div class="invisible-content">
+                                <div class="inner-content">
+                                    <p>{{ lesson.short_description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

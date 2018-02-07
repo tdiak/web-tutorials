@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load thumbnail staticfiles i18n %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li class=""><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+        <li class=""><a class="active">{{ search_word }}</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="index">
+        {% if lessons %}
+            <h2>{% trans 'Search results' %}</h2>
+        {% else %}
+            <h2>{% trans 'No results' %}</h2>
+        {% endif %}
+        <ul class="row lessons">
+            {% for lesson in lessons %}
+                <li class="col-md-3 list-item">
+                    <a href="{{ lesson.get_absolute_url }}">
+                        <div class="visible-content">
+                            <div class="inner-content">
+                                {% if lesson.course.category.image %}
+                                    <img src="{% thumbnail lesson.course.category.image 300x200 crop %}" alt="{{ course.name }}" />
+                                {% else %}
+                                    <img src="{% static 'img/placeholder.jpg' %}" alt="placeholder" />
+                                {% endif %}
+                                <p>{{ lesson.name }}</p>
+                            </div>
+                        </div>
+                        <div class="hide-item">
+                            <div class="invisible-content">
+                                <div class="inner-content">
+                                    <p>{{ lesson.short_description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

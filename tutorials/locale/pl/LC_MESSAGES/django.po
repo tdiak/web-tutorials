@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-05 01:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: courses/templates/course.html:6 courses/templates/courses.html:6
+#: lessons/templates/lesson.html:10 lessons/templates/search_results.html:6
+msgid "Home"
+msgstr "Strona główna"
+
+#: courses/templates/courses.html:13 templates/base.html:6
+msgid "Courses"
+msgstr "Kursy"
+
+#: lessons/templates/search_results.html:14
+#| msgid "Search"
+msgid "Search results"
+msgstr "Wyniki wyszukiwania"
+
+#: lessons/templates/search_results.html:16
+msgid "No results"
+msgstr "Brak wyników"
+
+#: templates/base.html:17
+msgid "Type the phrase..."
+msgstr "Wprowadź frazę..."
+
+#: templates/base.html:18
+msgid "Search"
+msgstr "Szukaj"
+
+#: templates/index.html:7
+msgid "Categories of courses"
+msgstr "Kategorie kursów"
+
+#: templates/index.html:32
+msgid "Last lessons"
+msgstr "Ostatnie lekcje"
+
+#: tutorials/settings.py:150
+msgid "English"
+msgstr "Angielski"
+
+#: tutorials/settings.py:151
+msgid "Polish"
+msgstr "Polski"

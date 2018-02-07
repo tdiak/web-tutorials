@@ -1,0 +1,7 @@
+venv
+tutorials/.idea/*
+*.pyc
+tutorials/db.sqlite3
+tutorials/dump.json
+tutorials/tutorials/localesettings.py
+tutorials/media
